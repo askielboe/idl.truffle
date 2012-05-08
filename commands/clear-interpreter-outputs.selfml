@@ -1,0 +1,14 @@
+(trigger
+    (tab ;cls))
+
+(name [Clear interpreter outputs])
+
+(only-in source.idl)
+
+(input nothing)
+
+(output nothing)
+
+(save nothing)
+
+(script [perl -e "truncate \"$TM_IDL_OUTFILE\",0"])

@@ -1,0 +1,9 @@
+(name [comment next line])
+
+(trigger
+    (key [[alt][enter]]))
+
+(only-in [source.idl comment.line])
+
+(snippet [
+; %{0}])

@@ -1,0 +1,41 @@
+(name [doc_library header])
+
+(trigger
+    (key [[ctrl][alt][shift]H]))
+
+(only-in source.idl)
+
+(snippet [;+
+; NAME: %{0}
+;
+; PURPOSE:
+;
+; CATEGORY:
+;
+; CALLING SEQUENCE:
+;
+; INPUTS:
+;
+; OPTIONAL INPUTS:
+;
+; KEYWORD PARAMETERS:
+;
+; OUTPUTS:
+;
+; OPTIONAL OUTPUTS:
+;
+; COMMON BLOCKS:
+;
+; SIDE EFFECTS:
+;
+; RESTRICTIONS:
+;
+; PROCEDURE:
+;
+; EXAMPLE:
+;
+; MODIFICATION HISTORY:
+;
+;
+;-
+])

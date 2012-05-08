@@ -1,0 +1,9 @@
+(name while)
+
+(trigger
+    (tab while))
+
+(only-in source.idl)
+
+(snippet [while %{0} do begin
+endwhile])

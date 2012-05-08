@@ -1,0 +1,42 @@
+(trigger
+    (key [[cmd]I]))
+
+(name [Start IDL Interpreter])
+
+(only-in source.idl)
+
+(input nothing nothing)
+
+(output tooltip)
+
+(save nothing)
+
+(script [#!/bin/bash
+
+# The following commands grab the environment variables
+# Most go through file, but PATH is reset by TextMate
+# This is assuming that tcsh runs automatically, 
+# if we are running bash, this print a bunch of errors, 
+# but as long as it works in both cases we are happy (for now)
+TM_TMPFILE=`mktemp -t tmp.Textmate`
+TM_SELECTED_TEXT=''
+test $SHELL != /bin/bash && \
+printenv | xargs -L 1 echo setenv | \
+sed 's/$/"/' | sed 's/=/ "/'> $TM_TMPFILE
+
+# Flush the tempfile buffer
+rm -f $TM_IDL_TMPFILE
+rm -f $TM_IDL_OUTFILE
+touch $TM_IDL_TMPFILE
+
+# Run the IDL interpreter
+echo "cd $TM_DIRECTORY" >> $TM_TMPFILE
+require_cmd "${TM_IDL:=idl}" "If you have installed IDL, then you need to either update your <tt>PATH</tt> or set the <tt>TM_IDL</tt> shell variable (e.g. in Preferences / Advanced)"
+
+
+osascript <<EOF
+   tell application "Terminal"
+      do script "source $TM_TMPFILE; tail -f $TM_IDL_TMPFILE | $TM_IDL >& $TM_IDL_OUTFILE; rm $TM_TMPFILE $TM_IDL_TMPFILE $TM_IDL_OUTFILE; exit"
+   end tell
+EOF 
+])

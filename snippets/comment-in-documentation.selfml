@@ -1,0 +1,9 @@
+(name [comment in documentation])
+
+(trigger
+    (key [[enter]]))
+
+(only-in [source.idl comment.documentation.idl])
+
+(snippet [
+;			%{0}])

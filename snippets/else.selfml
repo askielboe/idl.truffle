@@ -1,0 +1,11 @@
+(name else)
+
+(trigger
+    (tab else))
+
+(only-in source.idl)
+
+(snippet [else begin
+	%{0}
+endelse
+])

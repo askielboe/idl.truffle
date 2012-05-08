@@ -1,0 +1,10 @@
+(name repeat)
+
+(trigger
+    (tab repeat))
+
+(only-in source.idl)
+
+(snippet [repeat begin
+	%{1}
+endrep until %{0}])

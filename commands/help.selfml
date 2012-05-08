@@ -1,0 +1,16 @@
+(trigger
+    (key [[alt][cmd]H]))
+
+(name help)
+
+(only-in source.idl)
+
+(input selection word)
+
+(output nothing)
+
+(save nothing)
+
+(script [# simple online help for the current word
+
+open `find ${RSI_DIR}/idl/help/online_help -iname "$TM_CURRENT_WORD*.html"`])

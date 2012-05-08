@@ -1,0 +1,52 @@
+(name untitled)
+
+(trigger
+    (key [[ctrl][alt][shift]N]))
+
+(group.platform Misc)
+
+(group.principles IDL)
+
+(file.primary
+    (name template_in)
+    (filename template_in.txt)
+    (contents [;+
+; NAME:
+;
+; PURPOSE:
+;
+; CATEGORY:
+;
+; CALLING SEQUENCE:
+;
+; INPUTS:
+;
+; OPTIONAL INPUTS:
+;
+; KEYWORD PARAMETERS:
+;
+; OUTPUTS:
+;
+; OPTIONAL OUTPUTS:
+;
+; COMMON BLOCKS:
+;
+; SIDE EFFECTS:
+;
+; RESTRICTIONS:
+;
+; PROCEDURE:
+;
+; EXAMPLE:
+;
+; MODIFICATION HISTORY:
+;
+;  %{TM_NEW_FILE_BASENAME}
+;
+;  Created by %{TM_USERNAME} on %{TM_DATE}.
+;  Copyright (c) %{TM_YEAR} %{TM_ORGANIZATION_NAME}. All rights reserved.
+;
+;-
+
+
+]))

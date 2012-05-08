@@ -1,0 +1,16 @@
+(trigger
+    (key [[shift][cmd]I]))
+
+(name [Quit interpreter])
+
+(only-in source.idl)
+
+(input nothing)
+
+(output nothing)
+
+(save nothing)
+
+(script [echo "exit" >> $TM_IDL_TMPFILE 
+echo " "  >> $TM_IDL_TMPFILE 
+])

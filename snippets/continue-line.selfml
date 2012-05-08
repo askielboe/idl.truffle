@@ -1,0 +1,9 @@
+(name [continue line])
+
+(trigger
+    (key [[alt][enter]]))
+
+(only-in source.idl)
+
+(snippet [ $
+	%{0}])

@@ -1,0 +1,9 @@
+(name keyword_set)
+
+(trigger
+    (tab ks))
+
+(only-in source.idl)
+
+(snippet [if keyword_set(%{1}) then %{0}
+])

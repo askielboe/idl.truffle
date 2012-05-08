@@ -1,0 +1,12 @@
+(name case)
+
+(trigger
+    (tab case))
+
+(only-in source.idl)
+
+(snippet [case %{0} of
+
+	else : 
+endcase
+])

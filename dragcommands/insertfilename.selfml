@@ -1,0 +1,9 @@
+(name insertFilename)
+
+(only-in source.idl)
+
+(output snippet)
+
+(file-extensions png jpg txt dat img hdf nc tif)
+
+(script [echo "$TM_DROPPED_FILE"])

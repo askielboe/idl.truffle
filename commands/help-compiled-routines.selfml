@@ -1,0 +1,28 @@
+(trigger
+    (key [[shift][cmd]R]))
+
+(name [help compiled routines])
+
+(only-in source.idl)
+
+(input selection word)
+
+(output tooltip)
+
+(save nothing)
+
+(script [echo "help, /routines" >> $TM_IDL_TMPFILE 
+
+# occasionally IDL hasn't printed anything by the time we try to read it
+# 0.01 works too, but if something takes longer to run, it might need 0.1
+# and the extra tenth of a second doesn't seem like too much lag
+# this could always be made longer if some people still miss some input
+# I don't think textmate hangs waiting for the process to finish, it just won't 
+# display the tool tip as fast if we sleep longer.
+sleep 0.1
+# display the output from idl
+cat $TM_IDL_OUTFILE
+
+# clear the idl output file
+perl -e "truncate \"$TM_IDL_OUTFILE\",0"
+])

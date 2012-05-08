@@ -1,0 +1,17 @@
+(trigger
+    (key [[shift][f12]]))
+
+(name [Insert interpreter results])
+
+(only-in source.idl)
+
+(input nothing)
+
+(output after-selected)
+
+(save nothing)
+
+(script [# Unfortunately, the file starts collecting null characters ??
+# So strip them out. 
+cat -v $TM_IDL_OUTFILE | sed 's/\^@//g' 
+])

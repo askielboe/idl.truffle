@@ -1,0 +1,17 @@
+(trigger
+    (key [[f12]]))
+
+(name [Show interpreter results])
+
+(only-in source.idl)
+
+(input nothing)
+
+(output tooltip)
+
+(save nothing)
+
+(script [# longer jobs may require you to wait and view the results later
+
+cat -v $TM_IDL_OUTFILE | sed 's/\^@//g' 
+])

@@ -1,0 +1,9 @@
+(name notkeyword_set)
+
+(trigger
+    (tab nk))
+
+(only-in source.idl)
+
+(snippet [if not keyword_set(%{1}) then %{1} = %{0}
+])

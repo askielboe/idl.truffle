@@ -1,0 +1,11 @@
+(name if)
+
+(trigger
+    (tab if))
+
+(only-in source.idl)
+
+(snippet [if %{0} then begin
+
+endif
+])

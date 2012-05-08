@@ -1,0 +1,12 @@
+(name switch)
+
+(trigger
+    (tab switch))
+
+(only-in source.idl)
+
+(snippet [switch %{0} of
+
+	else : 
+endswitch
+])

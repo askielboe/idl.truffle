@@ -1,0 +1,33 @@
+(trigger
+    (key [[alt][cmd]S]))
+
+(name [help search])
+
+(only-in source.idl)
+
+(input selection word)
+
+(output new-document)
+
+(save nothing)
+
+(script [# search online help for the current word
+# this will return a text document that contains
+# a list of all of the help filenames that match
+# the current word.  to then view online help
+# convert that document to IDL mode (ctl-shft-opt-i)
+# then open help for that document with cmd-opt-h
+
+echo " "
+echo "These are all of the documents that match the word you selected."
+echo "To view the help for one document : "
+echo "    first convert this document to IDL (ctl-shft-opt-i)"
+echo "    then click on a word and veiw help (cmd-opt-h)"
+echo " "
+echo " note : for names with odd characters (e.g. ., (, etc.)"
+echo "        click on the beginning of the word"
+echo " "
+
+find ${RSI_DIR}/idl/help/online_help -iname "*$TM_CURRENT_WORD*.html" -exec basename {} .html \;
+
+])

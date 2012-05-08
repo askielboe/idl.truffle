@@ -1,0 +1,9 @@
+(name for)
+
+(trigger
+    (tab for))
+
+(only-in source.idl)
+
+(snippet [for %{0} do begin
+endfor])

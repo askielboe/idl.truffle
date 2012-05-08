@@ -1,0 +1,15 @@
+(trigger
+    (key [[ctrl][alt][cmd][enter]]))
+
+(name [Run selected text])
+
+(only-in source.idl)
+
+(input selection line)
+
+(output nothing)
+
+(save nothing)
+
+(script [echo "$TM_SELECTED_TEXT" >> $TM_IDL_TMPFILE 
+])

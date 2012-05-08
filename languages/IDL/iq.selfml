@@ -1,0 +1,34 @@
+(detector
+    (extension pro))
+
+(detector
+    (content-matches [-[*]-( Mode:)? IDL -[*]-]))
+
+(folding
+    (start [(?i:((begin\s*$)|(^\s*pro)|(^\s*function)))])
+    (stop [^\s*\b(?i:(end|endwhile|endif|endfor|endelse|endrep|endswitch|endcase))\b]))
+
+(pair [(]
+    [)]
+    (highlight))
+
+(pair `[`
+    `]`
+    (highlight))
+
+(pair [{]
+    [}]
+    (highlight))
+
+(indentation.decrease [\b(?i:(end|endwhile|endif|endfor|endelse|endrep|endswitch|endcase))\b])
+
+(indentation.increase [\b(?i:(begin|pro|function))\b])
+
+(indentation.increase-next-line-only \$)
+
+(shell-variables
+    (TM_IDL_TMPFILE /tmp/tmp.textmate.IDL)
+    (TM_IDL_OUTFILE /tmp/tmp.textmate.OutIDL)
+    (TM_COMMENT_START [; ]))
+
+(comment.line [; ])

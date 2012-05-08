@@ -1,0 +1,15 @@
+(trigger
+    (key [[ctrl][alt][shift][right]]))
+
+(name trace)
+
+(only-in source.idl)
+
+(input selection word)
+
+(output tooltip)
+
+(save nothing)
+
+(script [echo ".trace" >> $TM_IDL_TMPFILE 
+])
